@@ -31,7 +31,7 @@ function TodoListController() {
     	angular.forEach(vm.todos, function(task) {
     	var done = task.done;
       	count += done ? 0 : 1;
-    });
+    	});
     return count;
 	}
 	function removeTask(index) {
@@ -51,7 +51,8 @@ function TodoListController() {
     	vm.todos = [];
     	angular.forEach(oldTasks, function(task) {
       	if (!task.done) vm.todos.push(task);
-    });  
+      	vm.checkAll = false;
+    	});  
 	}
 
 }
